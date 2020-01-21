@@ -1,15 +1,11 @@
 from datetime import datetime
+from rest_framework import viewsets
+from rest_framework.decorators import action
+from rest_framework.response import Response
 from .serializers import DeviceSerializer, LocationSerializer
 from .serializers import DeviceLogSerializer, SensorLogSerializer
 from .serializers import SensorSerializer
 from ..models import Device, Location, DeviceLog, Sensor, SensorLog
-'''from django.http import JsonResponse'''
-from rest_framework import viewsets
-from rest_framework.decorators import action
-from rest_framework.response import Response
-
-'''from django.utils.timezone import now'''
-
 
 class DeviceViewSet(viewsets.ModelViewSet):
     queryset = Device.objects.all()
