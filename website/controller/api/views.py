@@ -93,8 +93,6 @@ class SensorViewSet(viewsets.ModelViewSet):
                                           state='0',
                                           datetime=datetime.now())
                     devicelog.save()
-                serialized = DeviceSerializer(dev)
-                return Response(serialized.data)
 
         recompute_states(sensorlog, sensor)
         return Response(serialized.data)
